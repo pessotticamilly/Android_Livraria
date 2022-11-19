@@ -7,42 +7,39 @@
 
     <View
         android:id="@+id/view"
-        android:layout_width="350dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_margin="20dp"
         android:background="#eee"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
 
     <ImageView
-        android:id="@+id/livro"
-        android:layout_width="76dp"
-        android:layout_height="73dp"
+        android:id="@+id/foto"
+        android:layout_width="80dp"
+        android:layout_height="120dp"
         android:layout_marginStart="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toTopOf="@+id/view"
-        app:layout_constraintVertical_bias="0.551"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/titulo"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="19dp"
         android:layout_marginStart="10dp"
         android:textColor="#000"
         app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintStart_toEndOf="@+id/livro"
+        app:layout_constraintStart_toEndOf="@+id/foto"
         app:layout_constraintTop_toTopOf="@+id/view" />
 
     <ImageView
         android:id="@+id/fechar"
         android:layout_width="27dp"
         android:layout_height="32dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintTop_toTopOf="@+id/view"
         app:srcCompat="@drawable/cross_small__1_" />

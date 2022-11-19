@@ -10,8 +10,8 @@ import android.os.Bundle;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private ArrayList<Livro> listaLivros;
     private RecyclerView recyclerView;
+    private ArrayList<Livro> listaLivros;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,16 +26,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setLivrosLista() {
-        listaLivros.add(new Livro(123456, "O lado feio do amor", "Collen Hoover", "Galera", 413));
-        listaLivros.add(new Livro(123456, "É assim que acaba", "Collen Hoover", "Galera", 374));
-        listaLivros.add(new Livro(123456, "Todas as suas (im)perfeições", "Collen Hoover", "Galera", 284));
-        listaLivros.add(new Livro(123456, "Verity", "Collen Hoover", "Galera", 277));
-        listaLivros.add(new Livro(123456, "É assim que começa", "Collen Hoover", "Galera", 332));
-        listaLivros.add(new Livro(123456, "As mil partes do meu coração", "Collen Hoover", "Galera", 269));
+        listaLivros.add(new Livro(R.drawable.asmilpartesdomeucoracao, "As mil partes do meu coração", "Colleen Hoover", "Galera", 2017));
+        listaLivros.add(new Livro(R.drawable.eassimqueacaba, "É assim que acaba", "Colleen Hoover", "Galera", 2018));
+        listaLivros.add(new Livro(R.drawable.eassimquecomeca, "É assim que começa", "Colleen Hoover", "Galera", 2022));
+        listaLivros.add(new Livro(R.drawable.novembro9, "Novembro, 9", "Colleen Hoover", "Galera", 2015));
+        listaLivros.add(new Livro(R.drawable.oladofeiodoamor, "O lado feio do amor", "Colleen Hoover", "Galera", 2015));
+        listaLivros.add(new Livro(R.drawable.todasassuasimperfeicoes, "Todas as suas (im)perfeições", "Colleen Hoover", "Galera", 2018));
+        listaLivros.add(new Livro(R.drawable.verity,"Verity", "Colleen Hoover", "Galera", 2020));
     }
 
     private void setAdapter() {
-        RecyclerAdapter adapter = new RecyclerAdapter(listaLivros);
+        RecyclerAdapter adapter = new RecyclerAdapter(listaLivros, this);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
 
         recyclerView.setLayoutManager(layoutManager);

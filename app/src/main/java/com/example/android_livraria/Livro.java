@@ -1,24 +1,24 @@
 package com.example.android_livraria;
 
 public class Livro {
-    private Integer isbn;
+    private Integer foto;
     private String titulo, autor, editora;
-    private Integer quantidadePaginas;
+    private Integer ano;
 
-    public Livro(Integer isbn, String titulo, String autor, String editora, Integer quantidadePaginas){
-        this.isbn = isbn;
+    public Livro(Integer foto, String titulo, String autor, String editora, Integer ano){
+        this.foto = foto;
         this.titulo = titulo;
         this.autor = autor;
         this.editora = editora;
-        this.quantidadePaginas = quantidadePaginas;
+        this.ano = ano;
     }
 
-    public Integer getIsbn() {
-        return isbn;
+    public Integer getFoto() {
+        return foto;
     }
 
-    public void setIsbn(Integer isbn) {
-        this.isbn = isbn;
+    public void setFoto(Integer foto) {
+        this.foto = foto;
     }
 
     public String getTitulo() {
@@ -45,11 +45,11 @@ public class Livro {
         this.editora = editora;
     }
 
-    public Integer getQuantidadePaginas() {
-        return quantidadePaginas;
+    public Integer getAno() {
+        return ano;
     }
 
-    public void setQuantidadePaginas(Integer quantidadePaginas) {
-        this.quantidadePaginas = quantidadePaginas;
+    public void setAno(Integer ano) {
+        this.ano = ano;
     }
 }
