@@ -18,10 +18,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<MyViewHolder> {
     private View view;
     private ImageView fechar;
     private Context context;
+    private RecyclerViewInterface recyclerViewInterface;
 
-    public RecyclerAdapter(ArrayList<Livro> listaLivros, Context context) {
+    public RecyclerAdapter(ArrayList<Livro> listaLivros, Context context, RecyclerViewInterface recyclerViewInterface) {
         this.listaLivros = listaLivros;
         this.context = context;
+        this.recyclerViewInterface = recyclerViewInterface;
     }
 
     @NonNull
@@ -59,6 +61,22 @@ public class RecyclerAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
         holder.getFoto().setImageResource(foto);
         holder.getTitulo().setText(titulo);
+
+        fechar = holder.getFechar();
+        fechar.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if(recyclerViewInterface != null){
+                            int position = holder.getAdapterPosition();
+
+                            if(position != RecyclerView.NO_POSITION) {
+                                recyclerViewInterface.onClickItem(position);
+                            }
+                        }
+                    }
+                }
+        );
     }
 
     @Override
