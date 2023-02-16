@@ -6,15 +6,17 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements RecyclerViewInterface {
     private RecyclerView recyclerView;
     private static ArrayList<Livro> listaLivros = new ArrayList<>();
-//    private RecyclerAdapter adapter;
+    Button button;
 
     static {
         listaLivros.add(new Livro(R.drawable.asmilpartesdomeucoracao, "As mil partes do meu coração", "Colleen Hoover", "Galera", 2017));
@@ -26,15 +28,21 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
         listaLivros.add(new Livro(R.drawable.verity, "Verity", "Colleen Hoover", "Galera", 2020));
     }
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         recyclerView = findViewById(R.id.recyclerView);
-//        adapter = new RecyclerAdapter(listaLivros, this, this);
-
+        button = findViewById(R.id.adicionar);
         setAdapter();
+
+        button.setOnClickListener(v -> irParaCadastrar());
+    }
+
+    private void irParaCadastrar() {
+        Intent intent = new Intent(this, MainActivity03.class);
+        startActivityForResult(intent, 1);
     }
 
     private void setAdapter() {
@@ -55,7 +63,6 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         recyclerView.getAdapter().notifyDataSetChanged();
     }
 }

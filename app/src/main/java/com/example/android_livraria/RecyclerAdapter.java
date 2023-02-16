@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
@@ -19,6 +20,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<MyViewHolder> {
     private ImageView fechar;
     private Context context;
     private RecyclerViewInterface recyclerViewInterface;
+    private Button adicionar;
 
     public RecyclerAdapter(ArrayList<Livro> listaLivros, Context context, RecyclerViewInterface recyclerViewInterface) {
         this.listaLivros = listaLivros;
@@ -37,7 +39,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Integer foto = listaLivros.get(position).getFoto();
         String titulo = listaLivros.get(position).getTitulo();
-
         Livro livro = listaLivros.get(position);
 
         view = holder.getLivroView();
@@ -66,7 +67,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<MyViewHolder> {
         fechar.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
-                    public void onClick(View v) {
+                    public void onClick(View view) {
                         if(recyclerViewInterface != null){
                             int position = holder.getAdapterPosition();
 
@@ -77,6 +78,17 @@ public class RecyclerAdapter extends RecyclerView.Adapter<MyViewHolder> {
                     }
                 }
         );
+
+//        adicionar = holder.getAdicionar();
+//        adicionar.setOnClickListener(
+//                new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                        Intent intent = new Intent(context, MainActivity03.class);
+//                        context.startActivity(intent);
+//                    }
+//                }
+//        );
     }
 
     @Override

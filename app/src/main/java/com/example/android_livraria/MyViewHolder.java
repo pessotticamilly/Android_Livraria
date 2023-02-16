@@ -1,6 +1,7 @@
 package com.example.android_livraria;
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,6 +12,7 @@ public class MyViewHolder extends RecyclerView.ViewHolder{
     private TextView titulo;
     private View livroView;
     private ImageView fechar;
+    private Button adicionar;
 
     public MyViewHolder(final View view){
         super(view);
@@ -18,6 +20,7 @@ public class MyViewHolder extends RecyclerView.ViewHolder{
         titulo = view.findViewById(R.id.titulo);
         livroView = view.findViewById(R.id.view);
         fechar = view.findViewById(R.id.fechar);
+        adicionar = view.findViewById(R.id.adicionar);
     }
 
     public ImageView getFoto() {
@@ -34,5 +37,9 @@ public class MyViewHolder extends RecyclerView.ViewHolder{
 
     public ImageView getFechar() {
         return fechar;
+    }
+
+    public Button getAdicionar() {
+        return adicionar;
     }
 }
