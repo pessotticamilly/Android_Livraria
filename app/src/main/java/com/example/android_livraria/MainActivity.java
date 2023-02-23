@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements RecyclerViewInterface {
     private RecyclerView recyclerView;
-    private static ArrayList<Livro> listaLivros = new ArrayList<>();
+    public static ArrayList<Livro> listaLivros = new ArrayList<>();
     Button button;
 
     static {
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerView = findViewById(R.id.recyclerView);
-        button = findViewById(R.id.adicionar);
+        button = findViewById(R.id.adicionarLivro);
         setAdapter();
 
         button.setOnClickListener(v -> irParaCadastrar());

@@ -2,6 +2,7 @@ package com.example.android_livraria;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,18 +39,20 @@ public class RecyclerAdapter extends RecyclerView.Adapter<MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Integer foto = listaLivros.get(position).getFoto();
+        Uri foto2 = listaLivros.get(position).getFoto2();
         String titulo = listaLivros.get(position).getTitulo();
         Livro livro = listaLivros.get(position);
 
         view = holder.getLivroView();
         view.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
                 Intent intent = new Intent(context, MainActivity02.class);
 
                 Bundle bundle = new Bundle();
 
                 bundle.putInt("foto", livro.getFoto());
+                bundle.putParcelable("foto2", livro.getFoto2());
                 bundle.putString("titulo", livro.getTitulo());
                 bundle.putString("autor", livro.getAutor());
                 bundle.putString("editora", livro.getEditora());
@@ -60,7 +63,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<MyViewHolder> {
             }
         });
 
+        if(foto == null) {
+            foto = R.drawable.asmilpartesdomeucoracao;
+        }
+
         holder.getFoto().setImageResource(foto);
+        holder.getFoto().setImageURI(foto2);
+
         holder.getTitulo().setText(titulo);
 
         fechar = holder.getFechar();
@@ -68,27 +77,16 @@ public class RecyclerAdapter extends RecyclerView.Adapter<MyViewHolder> {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if(recyclerViewInterface != null){
+                        if (recyclerViewInterface != null) {
                             int position = holder.getAdapterPosition();
 
-                            if(position != RecyclerView.NO_POSITION) {
+                            if (position != RecyclerView.NO_POSITION) {
                                 recyclerViewInterface.onClickItem(position);
                             }
                         }
                     }
                 }
         );
-
-//        adicionar = holder.getAdicionar();
-//        adicionar.setOnClickListener(
-//                new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View view) {
-//                        Intent intent = new Intent(context, MainActivity03.class);
-//                        context.startActivity(intent);
-//                    }
-//                }
-//        );
     }
 
     @Override

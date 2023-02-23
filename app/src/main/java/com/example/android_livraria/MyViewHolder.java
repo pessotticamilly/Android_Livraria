@@ -20,7 +20,7 @@ public class MyViewHolder extends RecyclerView.ViewHolder{
         titulo = view.findViewById(R.id.titulo);
         livroView = view.findViewById(R.id.view);
         fechar = view.findViewById(R.id.fechar);
-        adicionar = view.findViewById(R.id.adicionar);
+        adicionar = view.findViewById(R.id.adicionarLivro);
     }
 
     public ImageView getFoto() {

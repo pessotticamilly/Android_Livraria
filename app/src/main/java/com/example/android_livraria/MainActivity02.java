@@ -1,12 +1,13 @@
 package com.example.android_livraria;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity02 extends AppCompatActivity  {
+public class MainActivity02 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,13 +16,19 @@ public class MainActivity02 extends AppCompatActivity  {
         Bundle bundle = getIntent().getExtras();
 
         Integer foto = bundle.getInt("foto");
+        Uri foto2 = bundle.getParcelable("foto2");
         String titulo = bundle.getString("titulo");
         String autor = bundle.getString("autor");
         String editora = bundle.getString("editora");
         Integer ano = bundle.getInt("ano");
 
         ImageView fotoImage = findViewById(R.id.foto);
-        fotoImage.setImageResource(foto);
+ 
+        if (foto == R.drawable.asmilpartesdomeucoracao) {
+            fotoImage.setImageURI(foto2);
+        } else {
+            fotoImage.setImageResource(foto);
+        }
 
         TextView tituloText = findViewById(R.id.titulo);
         tituloText.setText(titulo);
