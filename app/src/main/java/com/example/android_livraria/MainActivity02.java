@@ -24,7 +24,7 @@ public class MainActivity02 extends AppCompatActivity {
 
         ImageView fotoImage = findViewById(R.id.foto);
  
-        if (foto == R.drawable.asmilpartesdomeucoracao) {
+        if (foto2 != null) {
             fotoImage.setImageURI(foto2);
         } else {
             fotoImage.setImageResource(foto);

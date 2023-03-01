@@ -51,7 +51,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
                 Bundle bundle = new Bundle();
 
-                bundle.putInt("foto", livro.getFoto());
+
+                if (livro.getFoto() != null) {
+                    bundle.putInt("foto", livro.getFoto());
+                }
                 bundle.putParcelable("foto2", livro.getFoto2());
                 bundle.putString("titulo", livro.getTitulo());
                 bundle.putString("autor", livro.getAutor());
@@ -63,8 +66,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<MyViewHolder> {
             }
         });
 
-        if(foto == null) {
-            foto = R.drawable.asmilpartesdomeucoracao;
+        if (foto == null) {
+            foto = R.drawable.livro;
         }
 
         holder.getFoto().setImageResource(foto);
