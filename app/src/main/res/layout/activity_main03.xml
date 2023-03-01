@@ -9,21 +9,23 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:text="Adicionar novo livro"
+        android:textColor="#FFF"
         android:textSize="16dp"
         android:textStyle="bold"
-        android:textColor="#FFF"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/capa"
-        android:layout_width="200dp"
-        android:layout_height="240dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="100dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:srcCompat="@tools:sample/avatars" />
@@ -31,11 +33,12 @@
     <ImageButton
         android:id="@+id/adicionarCapa"
         android:layout_width="84dp"
-        android:maxWidth="84dp"
         android:layout_height="44dp"
+        android:layout_marginTop="20dp"
+        android:maxWidth="84dp"
         android:maxHeight="44dp"
-        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/capa"
         tools:srcCompat="@tools:sample/avatars" />
@@ -44,12 +47,12 @@
         android:id="@+id/editTextTextPersonName5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Título"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/adicionarCapa" />
 
@@ -62,7 +65,7 @@
         android:inputType="textPersonName"
         android:text="Editora"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6" />
 
@@ -75,7 +78,7 @@
         android:inputType="textPersonName"
         android:text="Ano"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName7" />
 
@@ -88,7 +91,7 @@
         android:inputType="textPersonName"
         android:text="Autor"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
 
@@ -96,10 +99,11 @@
         android:id="@+id/adicionarLivro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="20dp"
         android:text="Adicionar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
